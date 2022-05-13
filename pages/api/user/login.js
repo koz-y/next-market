@@ -20,6 +20,7 @@ const loginUser = async (req, res) => {
           email: req.body.email,
         }
         const token = jwt.sign(payload, secret_key, { expiresIn: "1h" })
+        // console.log(token)
         return res.status(200).send({ message: "ログイン成功", token: token })
       } else {
         //パスワードが違う
